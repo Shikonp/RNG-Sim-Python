@@ -16,7 +16,7 @@ window = Tk()
 window.title("Gacha Simulator")
 window.geometry("300x100")
 
-Gacha = Button(window, text='Gacha', borderwidth=5, relief=SUNKEN ,command=rng)
+Gacha = Button(window, text='Gacha', borderwidth=5, command=rng)
 Gacha.pack(side=LEFT, anchor='se', padx=10, pady=10)
 
 rng_result = Label(window, text='', font=("Arial",20), bg="Grey")
