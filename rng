@@ -1,0 +1,25 @@
+import random
+from tkinter import *
+
+
+def rng():
+
+    list = ["Common", "Rare", "Epic", "Legendary", "Mythical"]
+
+    choice = random.choices(list, weights=(70, 15, 10, 0.01, 0.0005), k=1)
+
+    result = " ".join(str(i) for i in choice)
+
+    rng_result.config(text=f'{result}')
+
+window = Tk()
+window.title("Gacha Simulator")
+window.geometry("300x100")
+
+Gacha = Button(window, text='Gacha', borderwidth=5, relief=SUNKEN ,command=rng)
+Gacha.pack(side=LEFT, anchor='se', padx=10, pady=10)
+
+rng_result = Label(window, text='', font=("Arial",20), bg="Grey")
+rng_result.pack(side=RIGHT, anchor='se', padx=10, pady=10)
+
+window.mainloop()
